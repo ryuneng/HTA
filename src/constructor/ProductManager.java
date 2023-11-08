@@ -146,7 +146,7 @@ public class ProductManager {
 				}
 					
 				if (origin == null) {
-					System.out.println("### 상품번호에 해당하는 상품정보가 없습니다.");
+					System.out.println("### 존재하지 않는 상품번호입니다.");
 				} else {
 					System.out.println("### 수정할 상품정보를 확인하세요.");
 					origin.printProduct();

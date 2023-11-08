@@ -51,9 +51,7 @@ public class ProductManager_PracticeAlone {
 				System.out.print("### 입고수량 입력: ");
 				int stock = scanner.nextInt();
 				
-				Product product = new Product(no, name, maker, price, stock);
-				
-				db[savePosition++] = product;
+				db[savePosition++] = new Product(no, name, maker, price, stock);
 				
 				System.out.println("### 신규 상품정보 등록이 완료되었습니다.");
 					
@@ -123,23 +121,31 @@ public class ProductManager_PracticeAlone {
 				System.out.print("### 수정할 상품의 번호를 입력하세요: ");
 				int no = scanner.nextInt();
 				
-				Product origin = null;
+				// 이렇게 하면 있는 상품 전체 싹다 검사하는데
+				// 선생님이 작성하신 코드처럼 Product origin 따로 만들어서 하면 맞는 번호만 검사 
 				for (Product p : db) {
 					if (p == null) {
+						System.out.println("### 존재하지 않는 상품번호입니다.");
 						break;
 					}
 					if (p.no == no) {
-						origin = p;
+						System.out.println("### 수정할 상품정보를 확인하세요.");
+						p.printProduct();
+						System.out.println("### 이름, 가격, 수량정보를 입력하세요.");
+						System.out.print("### 변경할 상품이름 입력: ");
+						String name = scanner.nextString();
+						System.out.print("### 변경할 상품가격 입력: ");
+						int price = scanner.nextInt();
+						System.out.print("### 변경할 수량정보 입력: ");
+						int stock = scanner.nextInt();
+						
+						p.name = name;
+						p.price = price;
+						p.stock = stock;
+						
+						System.out.println("### 상품정보 수정이 완료되었습니다.");
 						break;
 					}
-				}
-				
-				if (origin == null) {
-					System.out.println("### 상품번호에 해당하는 상품정보가 없습니다.");
-				} else {
-					System.out.println("### 수정할 상품정보를 확인하세요.");
-					origin.printProduct();
-					
 				}
 				
 			} else if (menuNo == 5) {
