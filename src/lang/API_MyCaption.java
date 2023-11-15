@@ -1,4 +1,4 @@
-package api; //20231113
+package lang; //20231113
 
 /*
  * API(Application Programming Interface)
@@ -65,6 +65,6 @@ package api; //20231113
  * 		- 이 변수의 값을 변경할 수 없다.
  */
 
-public class MyCaption {
+public class API_MyCaption {
 
 }
