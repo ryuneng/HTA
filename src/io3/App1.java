@@ -19,9 +19,18 @@ public class App1 {
 		 */
 		BufferedReader reader = new BufferedReader(new FileReader(path));
 		
+		// BufferedReader의 ReadLine() 메소드로 읽어온 텍스트를 대입할 변수
 		String text = null;
+		// (text = reader.readLine()) != null 은
+		// reader.readLine()으로 읽어온 텍스트를 text 변수에 대입한다.
+		// text 변수에 대입된 문자열이 null 아니면 while문의 블록 내 수행문을 수행한다.
 		while ((text = reader.readLine()) != null) {
+			// 읽어온 문자열을 분석해서 평균점수를 계산하고 출력하는 수행문
+			
+			// text에 대입된 문자열은 "홍길동,100,80,80"과 같은 형태다.
+			// ","를 구분자로 문자열을 잘라서 배열로 반환받는다.
 			String[] items = text.split(",");
+			// 배열에 저장된 값을 조회하고, 필요한 경우 값을 변환한다.
 			String name = items[0];
 			int kor = Integer.parseInt(items[1]);
 			int eng = Integer.parseInt(items[2]);
