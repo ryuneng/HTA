@@ -26,4 +26,10 @@ package io4; //20231123
  *  FileInputStream in = new FileInputStream("sample.txt");
  */
 
+/*
+ * 1. 모든 예외는 잡지 말고 던져야 함
+ * 2. checkedException보다 uncheckedException 선호 (checked는 위임도 throws 적어야 함)
+ * 3.
+ */
+
 public class IO_MyCaption3 { }
