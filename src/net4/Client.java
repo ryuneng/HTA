@@ -26,7 +26,7 @@ public class Client {
 		 */
 		map.put(Cmd.MENU_LIST, new ClientFileListHandler());
 		map.put(Cmd.MENU_DOWNLOAD, new ClientFileDownloadHandler(scanner));
-		map.put(Cmd.MENU_UPLOAD, new ClientFileUploadHandler());
+		map.put(Cmd.MENU_UPLOAD, new ClientFileUploadHandler(scanner));
 		map.put(Cmd.MENU_EXIT, new ClientExitHandler());
 	}
 	
@@ -35,7 +35,7 @@ public class Client {
 	 * @throws IOException
 	 */
 	public void startup() throws IOException {
-		socket = new Socket("192.168.0.7", 30000);
+		socket = new Socket("192.168.0.7", 30000); // 소켓객체를 생성하는 것 자체가 연결요청
 		
 		out = new DataOutputStream(socket.getOutputStream());
 		in = new DataInputStream(socket.getInputStream());
