@@ -20,7 +20,7 @@ public class BookDao {
 				(book_no, book_title, book_writer, book_price, book_stock)
 				values
 				(?,?,?,?,?)
-			""";
+		""";
 		
 		Connection connection = getConnection();
 		PreparedStatement pstmt = connection.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class BookDao {
 				    book_stock = ?
 				where
 				    book_no = ?
-			""";
+		""";
 		
 		Connection connection = getConnection();
 		
